@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-10-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Top 10 Lead Records">
+        <lightning-datatable
+            key-field="Id"
+            data={leads}
+            columns={columns}
+            onrowselection={handleRowSelection}
+        ></lightning-datatable>
+    </lightning-card>
+    <template if:true={selectedLead}>
+        <c-log-a-call-modal
+            lead={selectedLead}
+            onclose={handleModalClose}
+        ></c-log-a-call-modal>
+    </template>
+</template>
+
